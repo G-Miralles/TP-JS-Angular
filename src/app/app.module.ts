@@ -7,6 +7,7 @@ import { DataFormComponent } from './components/data-form/data-form.component';
 import { DataComponent } from './components/data/data.component';
 import { DataListComponent } from './components/data-list/data-list.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { DataCategoryComponent } from './components/data-category/data-category.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     DataFormComponent,
     DataComponent,
     DataListComponent,
-    NavigationComponent
+    NavigationComponent,
+    DataCategoryComponent
   ],
   imports: [
     BrowserModule,

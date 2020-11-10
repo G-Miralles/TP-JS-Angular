@@ -1,14 +1,31 @@
-<div class="card">
+<div class="card mb-4">
     <div class="card-body">
         <!-- Formulario de carga de datos -->
-        <form >
+        <form (submit)="addData(newName, newPrice, newDate, newType, newDescription)">
             <div class="form-group">
-                <input type="text" placeholder="Ingrese nombre del concepto"  class="form-control">
+                <label> Ingrese el nombre de la operacion</label>
+                <input #newName type="text" placeholder="Ingrese nombre del concepto" autofocus required class="form-control">
             </div>
             <div class="form-group">
-                <textarea  cols="30" rows="10" class="form-control" placeholder="Ingrese una descripcion"></textarea>
+                <label> Ingrese un monto de la operacion</label>
+                <input #newPrice type="number" placeholder="Ingrese el monto" required class="form-control">
             </div>
-            <button type="submit" class="btn btn-primary btn-block">Agregar</button>
+            <div class="form-group" >
+                <label> Ingrese la fecha de la operacion</label>
+                <input #newDate type="date" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label> Seleccione un tipo de operacion</label>
+                <select #newType name="select" required class="form-control">
+                    <option value="Ingreso">Ingreso</option> 
+                    <option value="Gasto" selected>Gasto</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label> Redacte una descripcion de la operacion</label>
+                <textarea #newDescription style="resize: none;" cols="30" rows="3"  class="form-control"  required placeholder="Ingrese una descripcion"></textarea>
+            </div>
+            <button type="submit" class="btn btn-dark btn-block">Agregar</button>
         </form>
     </div>
 </div>
