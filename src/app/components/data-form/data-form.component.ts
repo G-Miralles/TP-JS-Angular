@@ -26,6 +26,10 @@ export class DataFormComponent implements OnInit {
       type: newType.value,
       description: newDescription.value,
     });
+    newName.value = '';
+    newPrice.value = '';
+    newDescription.value = '';
+
     return false;
   }
 
