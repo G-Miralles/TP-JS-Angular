@@ -29,8 +29,10 @@ export class DataFormComponent implements OnInit {
     newName.value = '';
     newPrice.value = '';
     newDescription.value = '';
+    newName.focus();
 
     return false;
   }
+  
 
 }

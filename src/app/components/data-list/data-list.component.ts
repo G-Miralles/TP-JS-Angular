@@ -22,4 +22,10 @@ export class DataListComponent implements OnInit {
     console.log(this.datas);
   }
 
+  dataDelete(data: Data) {
+    if(confirm( '¿Esta seguro de que desea eliminar este registro?')){
+      this.dataService.dataDelete(data);
+    }
+  }
+
 }
