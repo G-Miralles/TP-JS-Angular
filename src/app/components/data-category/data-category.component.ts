@@ -12,4 +12,9 @@ export class DataCategoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  addCategory(newCategoryName: HTMLInputElement, newCategoryDescription: HTMLInputElement) {
+    console.log("Esta merga anda bien", newCategoryName.value, newCategoryDescription.value);
+    return false;
+  }
+
 }

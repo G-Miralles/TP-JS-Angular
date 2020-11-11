@@ -9,6 +9,9 @@ import { DataListComponent } from './components/data-list/data-list.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { DataCategoryComponent } from './components/data-category/data-category.component';
 
+import { DataService } from './services/data.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,7 @@ import { DataCategoryComponent } from './components/data-category/data-category.
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

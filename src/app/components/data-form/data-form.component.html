@@ -1,29 +1,49 @@
-<div class="card mb-4">
+<div class="card mb-2">
     <div class="card-body">
         <!-- Formulario de carga de datos -->
-        <form (submit)="addData(newName, newPrice, newDate, newType, newDescription)">
+        <form (submit)="addData(newName, newPrice, newDate, newCategory, newType, newDescription)">
             <div class="form-group">
                 <label> Ingrese el nombre de la operacion</label>
                 <input #newName type="text" placeholder="Ingrese nombre del concepto" autofocus required class="form-control">
             </div>
             <div class="form-group">
                 <label> Ingrese un monto de la operacion</label>
-                <input #newPrice type="number" placeholder="Ingrese el monto" required class="form-control">
+                <input #newPrice type="text" placeholder="Ingrese el monto" required class="form-control">
             </div>
             <div class="form-group" >
                 <label> Ingrese la fecha de la operacion</label>
-                <input #newDate type="date" required class="form-control">
+                <select #newDate name="select" required class="form-control">
+                    <option value="Enero">Enero</option> 
+                    <option value="Febrero" >Febrero</option>
+                    <option value="Marzo">Marzo</option> 
+                    <option value="Abril" >Abril</option>
+                    <option value="Mayo" >Mayo</option>
+                    <option value="Junio">Junio</option> 
+                    <option value="Julio" >Julio</option>
+                    <option value="Agosto">Agosto</option> 
+                    <option value="Septiembre" >Septiembre</option>
+                    <option value="Octubre">Octubre</option> 
+                    <option value="Noviembre" >Noviembre</option>
+                    <option value="Diciembre">Diciembre</option> 
+                </select>
+            </div>
+            <div class="form-group">
+                <label> Seleccione un tipo de operacion</label>
+                <select #newCategory name="select" required class="form-control">
+                    <option value="Comida">Comida</option> 
+                    <option value="Impuesto" >Impuesto</option>
+                </select>
             </div>
             <div class="form-group">
                 <label> Seleccione un tipo de operacion</label>
                 <select #newType name="select" required class="form-control">
                     <option value="Ingreso">Ingreso</option> 
-                    <option value="Gasto" selected>Gasto</option>
+                    <option value="Gasto" >Egreso</option>
                 </select>
             </div>
             <div class="form-group">
                 <label> Redacte una descripcion de la operacion</label>
-                <textarea #newDescription style="resize: none;" cols="30" rows="3"  class="form-control"  required placeholder="Ingrese una descripcion"></textarea>
+                <textarea #newDescription style="resize: none;" cols="30" rows="1"  class="form-control"  required placeholder="Ingrese una descripcion"></textarea>
             </div>
             <button type="submit" class="btn btn-dark btn-block">Agregar</button>
         </form>
