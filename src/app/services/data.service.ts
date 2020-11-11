@@ -23,6 +23,5 @@ export class DataService {
 
   addData(data: Data) {
     this.datas.push(data);
-    return false;
   }
 }

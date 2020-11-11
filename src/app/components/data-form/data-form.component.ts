@@ -26,7 +26,6 @@ export class DataFormComponent implements OnInit {
       type: newType.value,
       description: newDescription.value,
     });
-    console.log(this.taskService.getDatas());
     return false;
   }
 
