@@ -21,8 +21,8 @@ export class DataService {
     ];
 
     this.categorys = [
-      {categoryName: 'Servicios', categoryDescription: 'Pago servicio de luz'},
-      {categoryName: 'Alimentos', categoryDescription: 'compras en el super'}
+      /*{categoryName: 'Servicios', categoryDescription: 'Pago servicio de luz'},
+      {categoryName: 'Alimentos', categoryDescription: 'compras en el super'}*/
     ]
   }
 
@@ -61,12 +61,26 @@ export class DataService {
   }
   /* Metodos de categorias */
   getCategorys(){
-    return this.categorys;
-  }
+    if(localStorage.getItem('categorys') === null){
+      return this.categorys;
+      }else{
+        this.categorys = JSON.parse(localStorage.getItem('categorys'));
+        return this.categorys;
+      }
+    }
+
 
   addCategory(category: Category){
     this.categorys.push(category);
-    //return false;
+    let categorys: Category[] = [];
+    if (localStorage.getItem('categorys') === null){
+      categorys.push(category);
+      localStorage.setItem('categorys', JSON.stringify(categorys));
+    }else{
+      categorys = JSON.parse(localStorage.getItem('categorys'));
+      categorys.push(category);
+    localStorage.setItem('categorys', JSON.stringify(categorys));
+    }
   }
 
 }
