@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/models/Category';
+
+
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-data-category',
@@ -7,13 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataCategoryComponent implements OnInit {
 
-  constructor() { }
+  categorys: Category[];
+
+  constructor(
+    public categoryService: DataService
+  ) { }
 
   ngOnInit(): void {
+    this.categorys = this.categoryService.getCategorys();
+    console.log(this.categorys);
   }
 
   addCategory(newCategoryName: HTMLInputElement, newCategoryDescription: HTMLInputElement) {
     console.log("Esta merga anda bien", newCategoryName.value, newCategoryDescription.value);
+    this.categoryService.addCategory({
+      categoryName: newCategoryName.value,
+      categoryDescription: newCategoryDescription.value
+    });
+    //console.log(this.categoryService.getCategorys());
     return false;
   }
 

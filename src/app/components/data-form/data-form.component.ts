@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Category } from 'src/app/models/Category';
+
+
 import { DataService } from '../../services/data.service';
 
 @Component({
@@ -9,11 +12,16 @@ import { DataService } from '../../services/data.service';
 })
 export class DataFormComponent implements OnInit {
 
+  categorys: Category[];
+
   constructor(
-    public taskService: DataService
+    public taskService: DataService,
+    public categoryService: DataService
   ) { }
 
   ngOnInit(): void {
+    this.categorys = this.categoryService.getCategorys();
+    //console.log(this.categorys);
   }
 
   addData(newName: HTMLInputElement, newPrice: HTMLInputElement, newDate: HTMLInputElement, newCategory: HTMLInputElement, newType: HTMLInputElement, newDescription: HTMLInputElement) {
