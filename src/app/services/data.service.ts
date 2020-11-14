@@ -4,6 +4,8 @@ import { Data } from '../models/Data';
 
 import { Category } from '../models/Category';
 
+import { Expenese } from '../models/Expense';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +14,10 @@ export class DataService {
   datas: Data[];
 
   categorys: Category[];
+
+  expenses: Expenese[];
+
+  filterCategory: '';
 
   constructor() { 
     this.datas = [
@@ -23,7 +29,11 @@ export class DataService {
     this.categorys = [
       /*{categoryName: 'Servicios', categoryDescription: 'Pago servicio de luz'},
       {categoryName: 'Alimentos', categoryDescription: 'compras en el super'}*/
-    ]
+    ];
+
+    this.expenses = [
+      {monto: 7500}
+    ];
   }
 
   getDatas(){
@@ -47,8 +57,25 @@ export class DataService {
       datas.push(data);
       localStorage.setItem('datas', JSON.stringify(datas));
     }
-    
-
+    //let Expenses = [];
+    //let Income = [];
+    let expensesTotal = 0;
+    let incomeTotal = 0;
+    let e = 0;
+    let I = 0;
+    for (let i = 0; i < datas.length; i++) {
+      if (datas[i].type == "Egreso"){
+        e = parseFloat(datas[i].price);
+        expensesTotal = (expensesTotal + e );
+      }else{
+        I = e = parseFloat(datas[i].price);
+        incomeTotal = (incomeTotal + I)
+      }
+    }
+    //Expenses.push(expensesTotal);
+    //Income.push(incomeTotal);
+    console.log("TOTAL DE EGRESOS", expensesTotal)
+    console.log("TOTAL DE INGRESOS", incomeTotal)
   }
 
   dataDelete(data: Data) {

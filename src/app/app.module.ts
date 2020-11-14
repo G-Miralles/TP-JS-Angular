@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
+import {FormsModule} from '@angular/forms';
+
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +14,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { DataCategoryComponent } from './components/data-category/data-category.component';
 
 import { DataService } from './services/data.service';
+import { FilterCategoryPipe } from './pipes/filter-category.pipe';
 
 
 @NgModule({
@@ -21,12 +24,14 @@ import { DataService } from './services/data.service';
     DataComponent,
     DataListComponent,
     NavigationComponent,
-    DataCategoryComponent
+    DataCategoryComponent,
+    FilterCategoryPipe
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

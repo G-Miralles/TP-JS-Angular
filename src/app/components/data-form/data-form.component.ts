@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Category } from 'src/app/models/Category';
 
-
 import { DataService } from '../../services/data.service';
 
 @Component({

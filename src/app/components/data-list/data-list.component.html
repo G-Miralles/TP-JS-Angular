@@ -1,3 +1,14 @@
+<form class="d-flex justify-content-center aling-item-center">
+    <div class="form-group d-flex justify-content-center aling-item-center" style="width: 25%;">
+        <div class="input-group">
+            <input type="text" name="filtrar"  class="form-control" placeholder="Filtrar cateogoria" [(ngModel)]="dataService.filterCategory">
+            <div class="input-group-text bg-white">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    </div>
+</form>
+
 <table class="table table-bordered table-hover table-dark table-striped ">
     <thead>
         <tr>
@@ -11,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let data of datas">
+        <tr *ngFor="let data of datas|filterCategory: 'category':dataService.filterCategory">
             <td>{{data.name}}</td>
             <td> $ {{data.price}}</td>
             <td>{{data.date}}</td>

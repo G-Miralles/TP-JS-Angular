@@ -1,10 +1,10 @@
 export interface Data {
-    name: String;
-    price: String;
-    date: String;
-    type: String;
-    category: String;
-    description: String;
+    name: string;
+    price: string;
+    date: string;
+    type: string;
+    category: string;
+    description: string;
 }
 
 export interface dataCategory {
