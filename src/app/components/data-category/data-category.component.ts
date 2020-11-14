@@ -28,6 +28,9 @@ export class DataCategoryComponent implements OnInit {
       categoryName: newCategoryName.value,
       categoryDescription: newCategoryDescription.value
     });
+    newCategoryName.value = '';
+    newCategoryDescription.value = '';
+    newCategoryName.focus();
     //console.log(this.categoryService.getCategorys());
     return false;
   }
