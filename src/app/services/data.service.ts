@@ -17,16 +17,9 @@ export class DataService {
   filterCategory: '';
 
   constructor() {
-    this.datas = [
-      /*{name: 'Verduleria', price: '350', date: 'Agosto', type: 'Gasto', category: 'comida', description: '1 choclo y 2 pimientos'},
-      {name: 'Auto', price: '950', date: 'Agosto', type: 'Gasto', category: 'Combustible', description: '10 litros de nasta'},
-      {name: 'Honorarios', price: '111350', date: 'Septiembre', type: 'Ingreso', category: 'dinero', description: 'sueldo'},*/
-    ];
+    this.datas = [];
 
-    this.categorys = [
-      /*{categoryName: 'Servicios', categoryDescription: 'Pago servicio de luz'},
-      {categoryName: 'Alimentos', categoryDescription: 'compras en el super'}*/
-    ];
+    this.categorys = [];
   }
 
   getDatas() {
