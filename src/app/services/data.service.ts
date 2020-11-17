@@ -18,6 +18,8 @@ export class DataService {
   
   filterDate:'';
 
+  filterExpensesIncomes: '';
+
   constructor() {
     this.datas = [];
 

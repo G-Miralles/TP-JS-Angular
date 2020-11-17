@@ -15,6 +15,7 @@ import { DataCategoryComponent } from './components/data-category/data-category.
 import { DataService } from './services/data.service';
 import { FilterCategoryPipe } from './pipes/filter-category.pipe';
 import { FilterDatePipe } from './pipes/filter-date.pipe';
+import { FilterExpensesIncomesPipe } from './pipes/filter-expenses-incomes.pipe';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { FilterDatePipe } from './pipes/filter-date.pipe';
     NavigationComponent,
     DataCategoryComponent,
     FilterCategoryPipe,
-    FilterDatePipe
+    FilterDatePipe,
+    FilterExpensesIncomesPipe
   ],
   imports: [
     BrowserModule,

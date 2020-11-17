@@ -1,7 +1,7 @@
 <div class="p-4">
     <div class="row">
         <!-- Filtro de categorias-->
-        <div class="col-md-6">
+        <div class="col-md-4">
             <form class="d-flex justify-content-center aling-item-center">
                 <div class="form-group d-flex justify-content-center aling-item-center" style="width: 50%;">
                     <div class="input-group">
@@ -15,7 +15,7 @@
             </form>
         </div>
         <!-- Filtro de fechas-->
-        <div class="col-md-6 text-center">
+        <div class="col-md-4 text-center">
             <form class="d-flex justify-content-center aling-item-center">
                 <div class="form-group d-flex justify-content-center aling-item-center" style="width: 50%;">
                     <div class="input-group">
@@ -28,10 +28,22 @@
                 </div>
             </form>
         </div>
+        <!-- Filtro de Ingresos/Egresos-->
+        <div class="col-md-4 text-center">
+            <form class="d-flex justify-content-center aling-item-center">
+                <div class="form-group d-flex justify-content-center aling-item-center" style="width: 50%;">
+                    <div class="input-group">
+                        <input type="text" name="filterExpensesIncomes" class="form-control" placeholder="Filtrar Egresos/Ingresos"
+                            [(ngModel)]="dataService.filterExpensesIncomes">
+                        <div class="input-group-text bg-white">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
-
 
 
 <table class="table table-bordered table-hover table-dark table-striped ">
@@ -48,7 +60,7 @@
     </thead>
     <tbody>
         <tr
-            *ngFor="let data of datas|filterCategory: 'category':dataService.filterCategory| filterDate: 'date':dataService.filterDate">
+            *ngFor="let data of datas|filterCategory: 'category':dataService.filterCategory| filterDate: 'date':dataService.filterDate| filterExpensesIncomes: 'type':dataService.filterExpensesIncomes ">
             <td>{{data.name}}</td>
             <td> $ {{data.price}}</td>
             <td>{{data.date}}</td>
