@@ -1,14 +1,38 @@
-<form class="d-flex justify-content-center aling-item-center">
-    <div class="form-group d-flex justify-content-center aling-item-center" style="width: 25%;">
-        <div class="input-group">
-            <input type="text" name="filtrar" class="form-control" placeholder="Filtrar cateogoria"
-                [(ngModel)]="dataService.filterCategory">
-            <div class="input-group-text bg-white">
-                <i class="fas fa-search"></i>
-            </div>
+<div class="p-4">
+    <div class="row">
+        <!-- Filtro de categorias-->
+        <div class="col-md-6">
+            <form class="d-flex justify-content-center aling-item-center">
+                <div class="form-group d-flex justify-content-center aling-item-center" style="width: 50%;">
+                    <div class="input-group">
+                        <input type="text" name="filtrar" class="form-control" placeholder="Filtrar cateogoria"
+                            [(ngModel)]="dataService.filterCategory">
+                        <div class="input-group-text bg-white">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Filtro de fechas-->
+        <div class="col-md-6 text-center">
+            <form class="d-flex justify-content-center aling-item-center">
+                <div class="form-group d-flex justify-content-center aling-item-center" style="width: 50%;">
+                    <div class="input-group">
+                        <input type="text" name="filterDate" class="form-control" placeholder="Filtrar Mes"
+                            [(ngModel)]="dataService.filterDate">
+                        <div class="input-group-text bg-white">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-</form>
+</div>
+
+
+
 
 <table class="table table-bordered table-hover table-dark table-striped ">
     <thead>
@@ -23,7 +47,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let data of datas|filterCategory: 'category':dataService.filterCategory">
+        <tr
+            *ngFor="let data of datas|filterCategory: 'category':dataService.filterCategory| filterDate: 'date':dataService.filterDate">
             <td>{{data.name}}</td>
             <td> $ {{data.price}}</td>
             <td>{{data.date}}</td>

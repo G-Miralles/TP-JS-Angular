@@ -15,6 +15,8 @@ export class DataService {
   categorys: Category[];
 
   filterCategory: '';
+  
+  filterDate:'';
 
   constructor() {
     this.datas = [];
